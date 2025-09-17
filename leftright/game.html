@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+  
+<script>
+function playGame() {
+  console.log("🌟 Welcome to the Mini Adventure Game!");
+  console.log("Tip: Make your choices wisely — one wrong step could end it all.\n");
+
+  const start = prompt("Would you like to play? (y/n): ").toLowerCase();
+
+  if (start !== "y") {
+    console.log("👋 That's too bad. Maybe next time!");
+    return;
+  }
+
+  console.log("\nYou wake up at a fork in the road. 🌲🌳");
+  console.log("Tip: One path leads to danger, the other to destiny.\n");
+
+  const path = prompt("Do you go left or right? (left/right): ").toLowerCase();
+
+  if (path === "left") {
+    console.log("\n🚧 You take the left path...");
+    console.log("Oh no! You fall off a broken bridge and into the river. 🏞️");
+    console.log("💀 You lose!\n");
+  } else if (path === "right") {
+    console.log("\n✅ You chose the right path and find a shaky wooden bridge ahead.");
+    console.log("Tip: Sometimes moving forward is the only way.\n");
+
+    const bridge = prompt("Do you cross the bridge or turn back? (cross/turn): ").toLowerCase();
+
+    if (bridge === "cross") {
+      console.log("\n🌉 You carefully cross the bridge...");
+      console.log("🎉 You made it across safely and reached the end of the journey!");
+      console.log("🏆 You win!\n");
+    } else if (bridge === "turn") {
+      console.log("\n↩️ You decide to turn back...");
+      console.log("😖 You trip on a log and injure your leg. No help in sight...");
+      console.log("💀 You lose!\n");
+    } else {
+      console.log("❌ Invalid choice. The forest swallows you in confusion...");
+      console.log("💀 You lose!\n");
+    }
+  } else {
+    console.log("❌ Invalid path. A tree falls on you. That escalated quickly.");
+    console.log("💀 You lose!\n");
+  }
+
+  const replay = prompt("Would you like to play again? (y/n): ").toLowerCase();
+  if (replay === "y") {
+    console.clear();
+    playGame();
+  } else {
+    console.log("👋 Thanks for playing! See you next time.");
+  }
+}
+
+playGame();
+</script>
+</body>
+</html>
